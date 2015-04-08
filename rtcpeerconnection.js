@@ -246,7 +246,7 @@ PeerConnection.prototype.processIce = function (update, cb) {
         });
     } else {
         // working around https://code.google.com/p/webrtc/issues/detail?id=3669
-        if (update.candidate && update.candidate.candidate.indexOf('a=') !== 0) {
+        if (update.candidate && update.candidate.candidate && update.candidate.candidate.indexOf('a=') !== 0) {
             update.candidate.candidate = 'a=' + update.candidate.candidate;
         }
 
